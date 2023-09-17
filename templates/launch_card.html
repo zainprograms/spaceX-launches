@@ -1,0 +1,21 @@
+{% macro render_launch(launch) %}
+<div class="launch-card">
+    {% if launch.links.patch.small %}
+    <img src="{{launch.links.patch.small}}" alt="{{launch.name}}" class="launch-image"/>
+    {% endif %}
+    <div>
+        <div class="launch-title">{{launch.name}}</div>
+        {% if launch.details %}
+        <p>{{launch.details}}</p>
+        {% endif %}
+        <p>{{launch.date_utc}}</p>
+
+        <div class="launch-links">
+            <a href="{{launch.links.reddit.launch}}" target="_blank">Reddit launch |</a>
+            <a href="{{launch.links.article}}" target="_blank">Article |</a>
+            <a href="{{launch.links.wikipedia}}" target="_blank">Wikipedia |</a>
+            <a href="{{launch.links.webcast}}" target="_blank">webcast</a>
+        </div>
+    </div>
+</div>
+{% endmacro %}
